@@ -1,0 +1,36 @@
+.section-list-tree {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+fieldset.head {
+    padding-left: 0px;
+    margin-left: -25px;
+}
+
+fieldset {
+    border: 0;
+    padding: 5px 10px;
+}
+
+label.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+}

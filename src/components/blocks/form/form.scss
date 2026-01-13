@@ -1,0 +1,14 @@
+// В этом файле должны быть стили для БЭМ-блока form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.form {
+  &__fieldset {
+    display: grid;
+    gap: 20px 0;
+    align-items: flex-start;
+  }
+
+  &__action {
+    margin-top: $typo-margin-vertical;
+  }
+}
