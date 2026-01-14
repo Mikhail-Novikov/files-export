@@ -1,0 +1,51 @@
+mixin tree-checkboxes(mods)
+    //- Принимает:
+    //-   mods  {string} - список модификаторов
+    //- Вызов:
+        +tree-checkboxes()
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' page-footer--' + modsList[i].trim();
+            }
+        }
+
+    .tree-checkboxes(class=allMods)&attributes(attributes)
+        +field-checkbox([
+            {
+                title: 'Турникеты и калитки',
+                attrs: {
+                name: 'turnikety',
+                }
+            },
+        ])
+
+        fieldset.tree-checkboxes__list
+            div.tree-checkboxes__list--wrapper
+                +field-checkbox([
+                    {
+                        title: 'Турникеты-триподы',
+                        attrs: {
+                        name: 'turnikety-tripody',
+                        }
+                    },
+                ])
+                +field-checkbox([
+                    {
+                        title: 'Тумбовые турникеты',
+                        attrs: {
+                        name: 'tumbovye-turnikety',
+                        }
+                    },
+                ])
+                +field-checkbox([
+                    {
+                        title: 'Скоростные проходы',
+                        attrs: {
+                        name: 'skorostnye-prokhody',
+                        }
+                    },
+                ])

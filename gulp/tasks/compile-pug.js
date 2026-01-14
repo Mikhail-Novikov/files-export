@@ -20,21 +20,22 @@ export const compilePug = () =>
         }),
       }),
     )
-    .pipe(
-      data(() => {
-        const dataJson = JSON.parse(
-          readFileSync('./src/data/data.json', 'utf8'),
-        );
-        let cssFile = 'styles.css';
-        try {
-          const manifest = JSON.parse(
-            readFileSync('build/css/css-rev-manifest.json', 'utf8'),
-          );
-          cssFile = manifest['styles.css'] || cssFile;
-        } catch (e) {}
-        return { ...dataJson, cssFile };
-      }),
-    )
+    // .pipe(
+    //   data(() => {
+    //     const dataJson = JSON.parse(
+    //       readFileSync('./src/data/data.json', 'utf8'),
+    //     );
+    //     let cssFile = 'styles.css';
+    //     try {
+    //       const manifest = JSON.parse(
+    //         readFileSync('build/css/css-rev-manifest.json', 'utf8'),
+    //       );
+    //       cssFile = manifest['styles.css'] || cssFile;
+    //     } catch (e) {}
+    //     return { ...dataJson, cssFile };
+    //   }),
+    // )
+    .pipe(data(() => JSON.parse(readFileSync('./src/data/data.json', 'utf8'))))
     .pipe(pug())
     .pipe(getClassesToBlocksList())
     .pipe(prettyHtml(PrettyHtmlConfig))

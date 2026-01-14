@@ -1,31 +1,54 @@
-$color-main: #0275d9;
+$color-brand: #214288;
+$color-contrast: #ffffff;
 $color-success: #2e8555;
-$color-danger: #b81111;
+$color-danger: #e64646;
 $color-warning: #efac4d;
+$color-gray: #2C2D2E;
 
 // Семантические цвета
-$text-color: #333333;
-$heading-color: #1a1a1a;
+$text-color: #2C2D2E;
+$text-contrast: #ffffff;
+$text-dark-primary: #ffffff;
+$text-primary: $text-color;
+$text-secondary: #818C99;
+
+$heading-color: $color-brand;
 $text-color-muted: #808080;
+
+// Цвета фона
 $body-bg: #ffffff;
+$base-bg: $body-bg;
+$primary-bg: #EBEDF0;
+$secondary-bg: #214288;
+$tertiary-bg: #F9F9F9;
+$selection-bg: $primary-bg;
+
+// Сепараторы
+$separator-primary: #CBCBCB;
+$border-color: $separator-primary;
+
+// Ссылки
+$color-main: $color-brand;
 $link-color: $color-main;
 $link-color-hover: $link-color;
-$border-color: #999999;
 
 // Базовая типографика
 $font-size: 16px;
-$font-size-h1: 40px;
-$font-size-h2: 32px;
-$font-size-h3: 24px;
+$font-size-lg: 40px;
+$font-size-h1: 32px;
+$font-size-h2: 24px;
+$font-size-h3: 20px;
 $font-size-h4: 18px;
 $font-size-h5: 16px;
 $font-size-h6: 16px;
 $font-size-sm: 0.75em;
+$font-size-subtitle: 18px;
+$font-size-subtitle-2: $font-size;
 $line-height: 1.2;
 $typo-margin-vertical: 1em;
 $heading-font-weight: 700;
-$font-family: -apple-system, blinkmacsystemfont, "Roboto", "Ubuntu",
-  "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+$font-family: 'Manrope', "Roboto", "Ubuntu",
+  "Droid Sans", "Helvetica Neue", "Arial", sans-serif, -apple-system, blinkmacsystemfont;
 
 // Ширины
 $screen-sm: 425px;
@@ -46,7 +69,7 @@ $field-padding-vertical: 5px;
 $field-padding-horizontal: 12px;
 $border-radius: 3px;
 $opacity: 0.3;
-$transition-time: 0.3s;
+$transition-time: 0s;
 $shadow: 0 0 5px rgb(0 0 0 / 30%);
 $menu-desktop-width: $screen-lg;
 $toggler-part-height: 2px;

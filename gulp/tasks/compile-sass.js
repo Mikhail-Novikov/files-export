@@ -32,9 +32,9 @@ export const compileSass = () =>
         }),
       ]),
     )
-    .pipe(rev())
-    .pipe(gulp.dest('build/css'))
-    .pipe(rev.manifest('css-rev-manifest.json', { merge: true }))
+    // .pipe(rev())
+    // .pipe(gulp.dest('build/css'))
+    // .pipe(rev.manifest('css-rev-manifest.json', { merge: true }))
     .pipe(gulp.dest('build/css'))
     .pipe(browsersync.stream());
 
