@@ -19,22 +19,33 @@
   }
 
   &__name {
-    display: flex;
-    gap: 0 10px;
+    display: inline-flex;
+    gap: 0 16px;
     align-items: flex-start;
+    margin: 4px;
+    cursor: pointer;
+
+    &::selection {
+      background: $selection-bg;
+      color: $text-color;
+      text-shadow: none;
+    }
   }
 
   &__name-text {
+    color: $text-primary;
+    font-family: 'Manrope';
     font-size: 16px;
-    line-height: 120%;
+    font-weight: 400;
+    line-height: 24px;
   }
 
   &__input {
     position: relative;
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin: 0;
+    width: 16px;
+    height: 16px;
+    margin: 4px 0 0;
     color: #000000;
     appearance: none;
     cursor: pointer;
@@ -42,24 +53,20 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border-radius: 0;
     transition: background $transition-time cubic-bezier(0.1, 0.1, 0.25, 1);
 
     &.just-validate-error-field {
       border-color: $color-danger;
-
-      &:focus {
-        box-shadow: 0 0 0 3px rgba($color-danger, $opacity);
-      }
     }
 
-    &:focus {
-      @include field-focus;
+    &:hover {
+      background-color: $border-color;
+      border-color: $border-color;
     }
 
     &:checked {
-      // background-color: $color-main;
-      // border-color: $color-main;
+      border-color: $color-brand;
       background-image: url("../images/checkbox.svg");
     }
   }
