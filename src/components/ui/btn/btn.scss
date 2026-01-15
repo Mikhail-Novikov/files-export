@@ -1,7 +1,5 @@
 // В этом файле должны быть стили для БЭМ-блока btn, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-@use "sass:color";
 
 // @property --gradient-button-fill {
 //   syntax: "<color>";
@@ -13,7 +11,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: $width-btn;
+  line-height: inherit;
+  min-height: $height-btn;
   max-width: 100%;
   padding: $field-padding-vertical  $field-padding-horizontal;
   color: $text-color;
@@ -21,28 +21,19 @@
   cursor: pointer;
   user-select: none;
   outline: none;
-  background-color: #e6e6e6;
-  border: none;
-  border-radius: $border-radius;
+  background-color: transparent;
+  box-shadow: $shadow;
 
-  &:hover,
-  &:focus {
-    color: $text-color;
-    text-decoration: none;
-    background-color: color.adjust(#e6e6e6, $lightness: -10%);
-  }
-
-  &:active,
-  &:focus {
-    @include field-focus;
-  }
+  // todo: убрать important
+  border: none !important;
+  text-decoration: none !important;
 
   &--disabled,
   &:disabled {
     color: $text-color;
     cursor: not-allowed;
     background-color: #e6e6e6;
-    opacity: $opacity;
+    opacity: 1;
 
     /* stylelint-disable-next-line at-rule-no-unknown */
     @at-root a.btn--disabled {
@@ -50,14 +41,55 @@
     }
   }
 
-  &--main {
+  &--primary {
+    color: $text-contrast;
+    background-color: $color-main;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $text-contrast;
+    text-decoration: none;
+    background-color: $visited-main-color;
+    box-shadow: $shadow;
+  }
+
+    &--disabled,
+    &:disabled {
+      color: $text-contrast;
+      background-color: $disabled-main-color;
+    }
+  }
+
+  &--secondary {
+    color: $color-brand;
+    background-color: $secondary-btn-bg;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-brand;
+      background-color: $visited-main-color;
+      box-shadow: $shadow;
+    }
+
+    &--disabled,
+    &:disabled {
+      color: $disabled-main-color;
+      background-color: $disabled-secondary-color;
+    }
+  }
+
+  &--outlined {
     color: #ffffff;
     background-color: $color-main;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: #ffffff;
-      background-color: color.adjust($color-main, $lightness: -10%);
+      background-color:  $color-main;
+      box-shadow: $shadow;
     }
 
     &--disabled,
@@ -67,17 +99,22 @@
     }
   }
 
-  // &--gradient {
-  //   color: $text-color;
-  //   background:
-  //     linear-gradient(var(--gradient-button-fill, #ffffff) 0 0) padding-box,
-  //     linear-gradient(-45deg, #ff0000, #00ff00) border-box;
-  //   border: 2px solid transparent;
-  //   transition: --gradient-button-fill $transition-time;
+  &--tertiary {
+    color: #ffffff;
+    background-color: $color-main;
 
-  //   &:hover,
-  //   &:focus {
-  //     --gradient-button-fill: transparent;
-  //   }
-  // }
+    &:hover,
+    &:focus,
+    &:active {
+      color: #ffffff;
+      background-color:  $color-main;
+      box-shadow: $shadow;
+    }
+
+    &--disabled,
+    &:disabled {
+      color: #ffffff;
+      background-color: $color-main;
+    }
+  }
 }

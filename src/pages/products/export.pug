@@ -4,7 +4,7 @@ block meta
   title Export PERCo
 
 block consts
-  - const bodyClass = "export";
+  - const bodyClass = "page-export";
 
 block content
   main
@@ -12,12 +12,5 @@ block content
       h1.mb-32.font-size-lg Информация для сайтов партнеров
 
       div#download_zip
-        form#getExport(name='Tree' action='ziped_data.php' method='POST')
-          div.blocks
-            div
-              h3
-                | Выберите товары:
-              +tree-checkboxes
-
-
-
+        form#getExport(name='Tree')
+          +page-export()

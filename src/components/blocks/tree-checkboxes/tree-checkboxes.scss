@@ -6,14 +6,14 @@
     &__list {
         border: 0;
         margin: 0;
-        padding: 12px 0 0;
-
-        .field-checkbox:not(:last-child) {
-            margin-bottom: 12px;
-        }
+        padding: 0;
     }
 
     &__list--wrapper {
         margin-left: 32px;
+    }
+
+    .field-checkbox__name {
+        margin-bottom: 16px;
     }
 }

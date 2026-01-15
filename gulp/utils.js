@@ -4,7 +4,7 @@ import { join, sep } from 'node:path';
 
 export const isDevelopment = process.env.NODE_ENV === 'development';
 export const doNotEditMessage =
-  '\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n';
+  '\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n\n';
 
 export const fileExist = (path) => existsSync(path);
 

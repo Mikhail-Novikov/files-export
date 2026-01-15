@@ -1,51 +1,55 @@
-mixin tree-checkboxes(mods)
+mixin tree-checkboxes(data, mods)
     //- Принимает:
+    //-   data  {array} - JSON данные со структурой товаров
     //-   mods  {string} - список модификаторов
     //- Вызов:
-        +tree-checkboxes()
+        +tree-checkboxes(data)
     -
         // список модификаторов
         var allMods = '';
         if(typeof(mods) !== 'undefined' && mods) {
             var modsList = mods.split(',');
             for (var i = 0; i < modsList.length; i++) {
-            allMods = allMods + ' page-footer--' + modsList[i].trim();
+            allMods = allMods + ' tree-checkboxes--' + modsList[i].trim();
             }
         }
 
     .tree-checkboxes(class=allMods)&attributes(attributes)
-        +field-checkbox([
-            {
-                title: 'Турникеты и калитки',
-                attrs: {
-                name: 'turnikety',
-                }
-            },
-        ])
-
-        fieldset.tree-checkboxes__list
-            div.tree-checkboxes__list--wrapper
+        - if (data && data.length > 0)
+            each item in data
                 +field-checkbox([
                     {
-                        title: 'Турникеты-триподы',
+                        title: item.title,
+                        checked: item.checked || false,
                         attrs: {
-                        name: 'turnikety-tripody',
+                            name: item.title.toLowerCase().replace(/\s+/g, '-'),
+                            
                         }
                     },
                 ])
-                +field-checkbox([
-                    {
-                        title: 'Тумбовые турникеты',
-                        attrs: {
-                        name: 'tumbovye-turnikety',
-                        }
-                    },
-                ])
-                +field-checkbox([
-                    {
-                        title: 'Скоростные проходы',
-                        attrs: {
-                        name: 'skorostnye-prokhody',
-                        }
-                    },
-                ])
+                - if (item.children && item.children.length > 0)
+                    fieldset.tree-checkboxes__list
+                        div.tree-checkboxes__list--wrapper
+                            each child in item.children
+                                +field-checkbox([
+                                    {
+                                        title: child.title,
+                                        checked: child.checked || false,
+                                        attrs: {
+                                            name: child.title.toLowerCase().replace(/\s+/g, '-'),
+                                        }
+                                    },
+                                ])
+                                - if (child.children && child.children.length > 0)
+                                    fieldset.tree-checkboxes__list
+                                        div.tree-checkboxes__list--wrapper
+                                            each grandchild in child.children
+                                                +field-checkbox([
+                                                    {
+                                                        title: grandchild.title,
+                                                        checked: grandchild.checked || false,
+                                                        attrs: {
+                                                            name: grandchild.title.toLowerCase().replace(/\s+/g, '-'),
+                                                        }
+                                                    },
+                                                ])

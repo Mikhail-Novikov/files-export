@@ -1,4 +1,5 @@
 $color-brand: #214288;
+$color-accent: #2B56B1;
 $color-contrast: #ffffff;
 $color-success: #2e8555;
 $color-danger: #e64646;
@@ -19,9 +20,16 @@ $text-color-muted: #808080;
 $body-bg: #ffffff;
 $base-bg: $body-bg;
 $primary-bg: #EBEDF0;
-$secondary-bg: #214288;
+$secondary-bg: #21428834;
 $tertiary-bg: #F9F9F9;
 $selection-bg: $primary-bg;
+
+// Цвета кнопок
+$disabled-main-color: rgba(33, 66, 136, .64);
+$visited-main-color: #2b56b1;
+$secondary-btn-bg: $primary-bg;
+$disabled-secondary-color: rgba(33, 66, 136, .16);
+$visited-secondary-color: #E2E5E9;
 
 // Сепараторы
 $separator-primary: #CBCBCB;
@@ -65,12 +73,14 @@ $grid-gap: 10px;
 // Разное
 $section-bottom-indent-xl: 150px;
 $section-bottom-indent-sm: 100px;
-$field-padding-vertical: 5px;
-$field-padding-horizontal: 12px;
-$border-radius: 3px;
-$opacity: 0.3;
+$field-padding-vertical: 14px;
+$field-padding-horizontal: 16px;
+$border-radius: 0;
+$opacity: 0;
 $transition-time: 0s;
-$shadow: 0 0 5px rgb(0 0 0 / 30%);
+$shadow: none;
+$width-btn: 234px;
+$height-btn: 48px;
 $menu-desktop-width: $screen-lg;
 $toggler-part-height: 2px;
 $z-index-modal: 100;

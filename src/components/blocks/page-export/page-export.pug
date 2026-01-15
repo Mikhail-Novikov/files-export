@@ -1,0 +1,45 @@
+mixin page-export(mods)
+    include export.perco.products.pug
+    include export.perco.fields.pug
+
+    div.row
+        section.col-lg-6.mb-20
+            h3
+                | Выберите товары:
+            +tree-checkboxes(exportPercoProducts)
+
+        section.col-lg-6
+            h3
+                | Выберите нужные поля:
+            +tree-checkboxes(exportPercoFields)
+
+            div.mt-20
+                +field-checkbox([
+                    {
+                        title: 'Нужен xls файл для Microsoft Excel',
+                        attrs: {
+                            name: 'check-xls',
+                            checked: true,
+                        },
+                        mods: 'bold',
+                    },
+                ])
+
+            div.mt-20
+                +btn('Собрать данные', 'primary', true)(disabled='disabled' type='submit')
+
+            div.mt-20.text-center.text-fit-content
+                +loader()
+                p.mt-20.text-left
+                    |Пожалуйста, подождите.
+                    br 
+                    |Сбор данных может занять
+                    br 
+                    |какое-то время
+                p.mt-20.text-danger.text-bold
+                    | Выберите хотя бы один объект!
+
+
+                div.message-success.mt-20.text-bold
+                    p.message-success__text Файл записан
+                    +download-link('Скачать')

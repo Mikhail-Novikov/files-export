@@ -1,0 +1,15 @@
+.download-link {
+    color: $link-color;
+    font-weight: 600;
+    @include flexbox;
+    @include align-items(center);
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        margin-right: 8px;
+        background: url('https://www.perco.ru/images/2023/icons/download-link.svg') no-repeat center center / contain;
+    }
+}

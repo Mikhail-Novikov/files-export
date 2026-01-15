@@ -1,7 +1,6 @@
 /*
  * ВНИМАНИЕ! Этот файл генерируется автоматически.
  * Любые изменения этого файла будут потеряны при следующей компиляции.
- * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.
  */
 
 @import "variables.scss";
@@ -12,7 +11,10 @@
 @import "global.scss";
 @import "fonts.scss";
 @import "../components/blocks/logo/logo.scss";
+@import "../components/blocks/page-export/page-export.scss";
 @import "../components/blocks/page-footer/page-footer.scss";
 @import "../components/blocks/tree-checkboxes/tree-checkboxes.scss";
 @import "../components/ui/btn/btn.scss";
+@import "../components/ui/download-link/download-link.scss";
 @import "../components/ui/field-checkbox/field-checkbox.scss";
+@import "../components/ui/loader/loader.scss";

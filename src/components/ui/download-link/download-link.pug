@@ -1,0 +1,17 @@
+mixin download-link(text, mods)
+    //- Принимает:
+    //-   text    {string} - текст ссылки
+    //-   mods    {string} - список модификаторов
+    //- Вызов:
+        +download-link('Ссылка')(href='/')
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+                allMods = allMods + ' download-link--' + modsList[i].trim();
+            }
+        }
+
+    a.download-link(href="#", class=allMods)&attributes(attributes)!= text
